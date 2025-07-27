@@ -8,12 +8,27 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
     "react-chartjs-2": "^5.2.0",
     "chart.js": "^4.4.1",
     "lucide-react": "^0.263.0"
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+    "lucide-react": "^0.526.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+>>>>>>> Stashed changes
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
