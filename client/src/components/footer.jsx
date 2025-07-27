@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
 
         {/* Social Icons */}
-        <div className="flex space-x-4 text-green-800 text-lg">
+        <div className="flex space-x-4 text-yellow-600 text-lg">
           <a href="#" aria-label="Twitter"><FaTwitter /></a>
           <a href="#" aria-label="Instagram"><FaInstagram /></a>
           <a href="#" aria-label="Facebook"><FaFacebookF /></a>

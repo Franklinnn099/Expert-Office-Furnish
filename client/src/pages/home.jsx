@@ -3,7 +3,7 @@ import { CheckCircle2, Search, ShoppingCart, User } from 'lucide-react';
 import heroImage from '../assets/Greencouch.png';
 import logo from '../assets/Logo.png';
 import Footer from '../components/footer';
-
+import 'tailwindcss/tailwind.css'; // Ensure Tailwind CSS is imported
 
 
 export default function Homepage() {
@@ -46,20 +46,20 @@ export default function Homepage() {
 
       {/* Commitments */}
       <section className="py-16 bg-white text-center">
-        <h2 className="text-2xl font-bold text-green-800 mb-10">Our Commitment to Your Well-being</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-10">Your Health Your Wealth</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
           <div className="bg-green-50 p-6 rounded-2xl shadow">
-            <CheckCircle2 className="text-green-700 mb-3 w-6 h-6 mx-auto" />
+            <CheckCircle2 className="text-yellow-600 mb-3 w-6 h-6 mx-auto" />
             <h3 className="font-semibold mb-2">Eco-Friendly Materials</h3>
             <p>We prioritize sustainable, responsibly sourced materials.</p>
           </div>
           <div className="bg-green-50 p-6 rounded-2xl shadow">
-            <CheckCircle2 className="text-green-700 mb-3 w-6 h-6 mx-auto" />
+            <CheckCircle2 className="text-yellow-600 mb-3 w-6 h-6 mx-auto" />
             <h3 className="font-semibold mb-2">Ergonomic Comfort</h3>
             <p>Furniture designed to support posture and reduce strain.</p>
           </div>
           <div className="bg-green-50 p-6 rounded-2xl shadow">
-            <CheckCircle2 className="text-green-700 mb-3 w-6 h-6 mx-auto" />
+            <CheckCircle2 className="text-yellow-600 mb-3 w-6 h-6 mx-auto" />
             <h3 className="font-semibold mb-2">Free Trials & Policies</h3>
             <p>Enjoy trial periods, warranties, and easy returns.</p>
           </div>
@@ -68,7 +68,7 @@ export default function Homepage() {
 
       {/* Products */}
       <section id="products" className="py-16 bg-green-50">
-        <h2 className="text-2xl font-bold text-center text-green-800 mb-10">Featured Products</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-900 mb-10">Featured Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-6xl mx-auto">
           <div className="bg-white rounded-2xl shadow p-4">
             <img src="/images/chair.png" alt="Chair" className="w-full h-40 object-cover rounded-xl mb-2" />
@@ -91,7 +91,7 @@ export default function Homepage() {
 
       {/* Testimonials */}
       <section id="testimonials" className="py-16 bg-white">
-        <h2 className="text-2xl font-bold text-center text-green-800 mb-10">What Our Customers Say</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-900 mb-10">What Our Customers Say</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
           <div className="bg-green-50 p-6 rounded-xl shadow">
             <p className="italic mb-4">"The ergonomic chair changed my work-from-home life! No more back pain. Highly recommend Expert Office."</p>
@@ -105,16 +105,28 @@ export default function Homepage() {
       </section>
 
       {/* Newsletter */}
-      <section id="contact" className="bg-green-100 py-12">
-        <div className="text-center max-w-xl mx-auto px-4">
-          <h2 className="text-xl font-semibold mb-2 text-green-900">Stay Updated</h2>
-          <p className="mb-4 text-green-800">Join our newsletter to receive updates and exclusive offers.</p>
-          <form className="flex flex-col sm:flex-row gap-2 justify-center">
-            <input type="email" placeholder="Enter your email" className="p-3 rounded-lg border border-green-700 focus:outline-none w-full sm:w-64" />
-            <button type="submit" className="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800">Subscribe</button>
-          </form>
+      <section className="py-12 px-4 bg-white text-center">
+      <h2 className="text-2xl font-bold text-gray-900 mb-2">Stay Updated</h2>
+      <p className="text-sm text-gray-600 mb-6">
+        Sign up for our newsletter to receive exclusive offers and the latest news on our products.
+      </p>
+
+      <form className="flex justify-center">
+        <div className="bg-gray-100 p-2 rounded-full flex items-center w-full max-w-md">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="flex-grow bg-transparent px-4 py-2 text-sm focus:outline-none"
+          />
+          <button
+            type="submit"
+            className="bg-green-300 hover:bg-green-400 text-black text-sm font-semibold px-4 py-2 rounded-full transition-colors"
+          >
+            Subscribe
+          </button>
         </div>
-      </section>
+      </form>
+    </section>
 
       {/* Footer */}
       <Footer />

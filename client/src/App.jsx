@@ -1,10 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/home';
 
-export default function App() {
+function App() {
   return (
-    <div className="min-h-screen">
-      <Homepage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
+
+
+
+
+
