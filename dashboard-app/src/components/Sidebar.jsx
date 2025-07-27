@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
   Box,
@@ -8,11 +8,15 @@ import {
   FileText,
   List,
   UserCheck,
+  PlusCircle,
 } from "lucide-react";
 
 export default function Sidebar() {
+  const location = useLocation();
+  const isProductsPath = location.pathname.startsWith("/products");
+
   return (
-    <aside className="fixed top-0 left-0 h-screen w-64 bg-white dark:bg-gray-800 shadow-md p-5">
+    <aside className="fixed top-0 left-0 h-screen w-64 bg-white dark:bg-gray-800 shadow-md p-5 overflow-y-auto">
       {/* Logo and Name */}
       <div className="flex items-center gap-3 mb-10 border-b pb-5 border-gray-200 dark:border-gray-700">
         <img
@@ -26,29 +30,120 @@ export default function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="space-y-6 text-gray-700 dark:text-gray-300">
-        <NavLink to="/" className="flex items-center gap-3 hover:text-green-600">
+      <nav className="space-y-4 text-gray-700 dark:text-gray-300">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `flex items-center gap-3 hover:text-green-600 ${
+              isActive ? "text-green-600 font-semibold" : ""
+            }`
+          }
+        >
           <LayoutDashboard size={20} /> Dashboard
         </NavLink>
-        <NavLink to="/products" className="flex items-center gap-3 hover:text-green-600">
-          <Box size={20} /> Products
-        </NavLink>
-        <NavLink to="/orders" className="flex items-center gap-3 hover:text-green-600">
+
+        {/* Products with Submenu */}
+        <div className="space-y-1">
+          <NavLink
+            to="/products"
+            className={({ isActive }) =>
+              `flex items-center gap-3 hover:text-green-600 ${
+                isProductsPath ? "text-green-600 font-semibold" : ""
+              }`
+            }
+          >
+            <Box size={20} /> Products
+          </NavLink>
+          {isProductsPath && (
+            <div className="ml-6 text-sm space-y-1">
+              <NavLink
+                to="/products"
+                end
+                className={({ isActive }) =>
+                  `block hover:text-green-600 ${
+                    isActive ? "text-green-600 font-medium" : ""
+                  }`
+                }
+              >
+                Product List
+              </NavLink>
+              <NavLink
+                to="/products/add"
+                className={({ isActive }) =>
+                  `block hover:text-green-600 ${
+                    isActive ? "text-green-600 font-medium" : ""
+                  }`
+                }
+              >
+                Add Product
+              </NavLink>
+            </div>
+          )}
+        </div>
+
+        <NavLink
+          to="/orders"
+          className={({ isActive }) =>
+            `flex items-center gap-3 hover:text-green-600 ${
+              isActive ? "text-green-600 font-semibold" : ""
+            }`
+          }
+        >
           <ShoppingCart size={20} /> Orders
         </NavLink>
-        <NavLink to="/users" className="flex items-center gap-3 hover:text-green-600">
+
+        <NavLink
+          to="/users"
+          className={({ isActive }) =>
+            `flex items-center gap-3 hover:text-green-600 ${
+              isActive ? "text-green-600 font-semibold" : ""
+            }`
+          }
+        >
           <Users size={20} /> Users
         </NavLink>
-        <NavLink to="/categories" className="flex items-center gap-3 hover:text-green-600">
+
+        <NavLink
+          to="/categories"
+          className={({ isActive }) =>
+            `flex items-center gap-3 hover:text-green-600 ${
+              isActive ? "text-green-600 font-semibold" : ""
+            }`
+          }
+        >
           <List size={20} /> Categories
         </NavLink>
-        <NavLink to="/reviews" className="flex items-center gap-3 hover:text-green-600">
+
+        <NavLink
+          to="/reviews"
+          className={({ isActive }) =>
+            `flex items-center gap-3 hover:text-green-600 ${
+              isActive ? "text-green-600 font-semibold" : ""
+            }`
+          }
+        >
           <Star size={20} /> Reviews
         </NavLink>
-        <NavLink to="/blogposts" className="flex items-center gap-3 hover:text-green-600">
+
+        <NavLink
+          to="/blogposts"
+          className={({ isActive }) =>
+            `flex items-center gap-3 hover:text-green-600 ${
+              isActive ? "text-green-600 font-semibold" : ""
+            }`
+          }
+        >
           <FileText size={20} /> Blog Posts
         </NavLink>
-        <NavLink to="/customers" className="flex items-center gap-3 hover:text-green-600">
+
+        <NavLink
+          to="/customers"
+          className={({ isActive }) =>
+            `flex items-center gap-3 hover:text-green-600 ${
+              isActive ? "text-green-600 font-semibold" : ""
+            }`
+          }
+        >
           <UserCheck size={20} /> Customers
         </NavLink>
       </nav>

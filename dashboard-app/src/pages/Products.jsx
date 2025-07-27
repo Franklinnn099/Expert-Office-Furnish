@@ -1,11 +1,11 @@
+// Products.jsx
 import AdminLayout from "../layouts/AdminLayout";
+import { Outlet } from "react-router-dom";
 
 export default function Products() {
   return (
     <AdminLayout>
-      <h1 className="text-2xl font-bold mb-4">Products</h1>
-      <p>Manage all products here.</p>
+      <Outlet />
     </AdminLayout>
   );
 }
-
