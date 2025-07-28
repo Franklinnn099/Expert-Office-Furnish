@@ -6,6 +6,7 @@ import ProductList from "./pages/ProductList";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
 import Orders from "./pages/Orders";
+import OrderDetails from "./pages/OrderDetails"; // ✅ Import Order Details
 import Categories from "./pages/Categories";
 import Customers from "./pages/Customers";
 import Reviews from "./pages/Reviews";
@@ -32,15 +33,21 @@ export default function App() {
   return (
     <div className={darkMode ? "dark bg-gray-900 text-gray-100" : "bg-white text-gray-900"}>
       <Routes>
+        {/* Dashboard */}
         <Route path="/" element={<Dashboard toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
 
+        {/* Products */}
         <Route path="/products" element={<Products />}>
           <Route index element={<ProductList />} />
           <Route path="add" element={<AddProduct />} />
           <Route path="edit/:id" element={<EditProduct />} />
         </Route>
 
+        {/* Orders */}
         <Route path="/orders" element={<Orders />} />
+        <Route path="/orders/:id" element={<OrderDetails />} /> {/* ✅ Added this */}
+
+        {/* Other Pages */}
         <Route path="/categories" element={<Categories />} />
         <Route path="/customers" element={<Customers />} />
         <Route path="/reviews" element={<Reviews />} />
