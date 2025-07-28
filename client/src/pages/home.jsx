@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CheckCircle2, Search, ShoppingCart, User } from 'lucide-react';
 import heroImage from '../assets/Greencouch.png';
 import logo from '../assets/Logo.png';
@@ -22,7 +23,9 @@ export default function Homepage() {
               <img src={logo} alt="Expert Office Logo" className="h-20" />
               <nav className="space-x-4 text-white hidden sm:block">
                 <button onClick={() => scrollToSection('home')} className="hover:underline">Home</button>
+               <Link to="/shop">
                 <button onClick={() => scrollToSection('products')} className="hover:underline">Products</button>
+                </Link>
                 <button onClick={() => scrollToSection('testimonials')} className="hover:underline">Testimonials</button>
                 <button onClick={() => scrollToSection('contact')} className="hover:underline">Contact</button>
               </nav>
