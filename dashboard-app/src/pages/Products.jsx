@@ -3,18 +3,30 @@ import { Link, useNavigate } from "react-router-dom";
 const products = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+    image: "/pics/sofa.png",
     alt: "Modern Sofa",
+    title: "Product List",
+    description: "Manage your products, inventory, and variants.",
+    link: "/product-list",
+    button: "View",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
+    image: "/pics/desk2.jpg",
     alt: "Wooden Bench",
+    title: "Add Product",
+    description: "Add a new product to your store.",
+    link: "/add-product",
+    button: "Add",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1582582422014-5c3a9e167d9d",
+    image: "/pics/desk.jpg",
     alt: "Rattan Settee",
+    title: "Edit Product",
+    description: "Edit an existing product in your store.",
+    link: "/edit-product/1",
+    button: "Edit",
   },
 ];
 
@@ -23,75 +35,52 @@ export default function Products() {
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6">Products</h1>
+      <h1 className="text-4xl font-bold mb-10 text-gray-800 dark:text-white tracking-tight">
+        Products
+      </h1>
 
-      <div className="flex gap-8">
-        {/* Left Section - Navigation */}
-        <div className="w-1/3 space-y-6">
-          {/* Product List */}
-          <div>
-            <p className="text-sm text-green-700">View all products</p>
-            <h2 className="text-lg font-semibold">Product list</h2>
-            <p className="text-sm text-gray-500">
-              Manage your products, inventory, and variants
-            </p>
-            <Link
-              to="/product-list"
-              className="mt-2 inline-block px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800"
-            >
-              View
-            </Link>
-          </div>
-
-          {/* Add Product */}
-          <div>
-            <p className="text-sm text-green-700">Add a new product</p>
-            <h2 className="text-lg font-semibold">Add product</h2>
-            <p className="text-sm text-gray-500">
-              Add a new product to your store
-            </p>
-            <Link
-              to="/add-product"
-              className="mt-2 inline-block px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800"
-            >
-              Add
-            </Link>
-          </div>
-
-          {/* Edit Product */}
-          <div>
-            <p className="text-sm text-green-700">Edit a product</p>
-            <h2 className="text-lg font-semibold">Edit product</h2>
-            <p className="text-sm text-gray-500">
-              Edit an existing product in your store
-            </p>
-            <button
-              onClick={() => navigate("/edit-product/1")}
-              className="mt-2 px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800"
-            >
-              Edit Product
-            </button>
-          </div>
-        </div>
-
-        {/* Right Section - Product Images */}
-        <div className="w-2/3 space-y-4">
-          <Link
-            to="/add-product"
-            className="mb-4 inline-block px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800"
+      <div className="space-y-8">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="flex items-center gap-6 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
           >
-            Add product
-          </Link>
-          {products.map((product) => (
-            <div key={product.id}>
+            {/* Image with hover zoom */}
+            <div className="relative w-40 h-40 overflow-hidden rounded-xl">
               <img
                 src={product.image}
                 alt={product.alt}
-                className="rounded-xl object-cover w-full h-40"
+                className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
               />
             </div>
-          ))}
-        </div>
+
+            {/* Text & Button */}
+            <div className="flex-1">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                {product.title}
+              </h2>
+              <p className="text-gray-500 dark:text-gray-300 mb-4 text-sm">
+                {product.description}
+              </p>
+
+              {product.title === "Edit Product" ? (
+                <button
+                  onClick={() => navigate(product.link)}
+                  className="px-6 py-2 bg-gradient-to-r from-green-600 to-green-800 text-white rounded-lg shadow hover:opacity-90 transition"
+                >
+                  {product.button}
+                </button>
+              ) : (
+                <Link
+                  to={product.link}
+                  className="px-6 py-2 bg-gradient-to-r from-green-600 to-green-800 text-white rounded-lg shadow hover:opacity-90 transition"
+                >
+                  {product.button}
+                </Link>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
