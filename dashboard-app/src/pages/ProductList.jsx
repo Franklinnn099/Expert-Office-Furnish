@@ -1,4 +1,3 @@
-// src/pages/ProductList.jsx
 import { Link } from "react-router-dom";
 
 const products = [
@@ -24,42 +23,36 @@ const products = [
 
 export default function ProductList() {
   return (
-    <div className="p-4">
+    <div className="p-6">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-semibold">Products</h2>
+        <h2 className="text-2xl font-semibold">Product List</h2>
         <Link
-          to="/products/add"
-          className="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600"
+          to="/add-product"
+          className="bg-green-700 text-white px-4 py-2 rounded text-sm font-medium hover:bg-green-800"
         >
-          Add Product
+          + Add Product
         </Link>
       </div>
 
-      <input
-        type="text"
-        placeholder="Search products"
-        className="w-full px-3 py-2 mb-4 rounded bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white"
-      />
-
       <div className="overflow-x-auto">
-        <table className="min-w-full text-left">
+        <table className="min-w-full text-left border border-gray-200 dark:border-gray-700 rounded">
           <thead>
-            <tr className="text-sm text-gray-500 dark:text-gray-300">
-              <th className="p-2">Product</th>
-              <th className="p-2">Category</th>
-              <th className="p-2">Price</th>
-              <th className="p-2">Status</th>
-              <th className="p-2">Stock</th>
-              <th className="p-2">Actions</th>
+            <tr className="text-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800">
+              <th className="p-3">Product</th>
+              <th className="p-3">Category</th>
+              <th className="p-3">Price</th>
+              <th className="p-3">Status</th>
+              <th className="p-3">Stock</th>
+              <th className="p-3">Actions</th>
             </tr>
           </thead>
           <tbody>
             {products.map((prod) => (
               <tr
                 key={prod.id}
-                className="text-sm border-t dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800"
+                className="border-t dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800"
               >
-                <td className="p-2 flex items-center gap-2">
+                <td className="p-3 flex items-center gap-2">
                   <img
                     src={prod.image}
                     alt={prod.name}
@@ -67,9 +60,9 @@ export default function ProductList() {
                   />
                   {prod.name}
                 </td>
-                <td className="p-2">{prod.category}</td>
-                <td className="p-2">{prod.price}</td>
-                <td className="p-2">
+                <td className="p-3">{prod.category}</td>
+                <td className="p-3">{prod.price}</td>
+                <td className="p-3">
                   <span
                     className={`px-2 py-1 rounded-full text-xs ${
                       prod.status === "In Stock"
@@ -80,10 +73,10 @@ export default function ProductList() {
                     {prod.status}
                   </span>
                 </td>
-                <td className="p-2">{prod.stock}</td>
-                <td className="p-2">
+                <td className="p-3">{prod.stock}</td>
+                <td className="p-3">
                   <Link
-                    to={`/products/edit/${prod.id}`}
+                    to={`/edit-product/${prod.id}`}
                     className="text-blue-500 hover:underline text-sm"
                   >
                     Edit

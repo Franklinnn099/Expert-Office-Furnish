@@ -1,5 +1,3 @@
-// src/pages/Dashboard.jsx
-import AdminLayout from "../layouts/AdminLayout";
 import { Bar, Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -75,7 +73,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <AdminLayout>
+    <div>
       {/* Page Header */}
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Dashboard</h1>
 
@@ -191,6 +189,6 @@ export default function Dashboard() {
           </table>
         </div>
       </div>
-    </AdminLayout>
+    </div>
   );
 }

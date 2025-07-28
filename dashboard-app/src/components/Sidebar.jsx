@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
   Box,
@@ -8,13 +8,9 @@ import {
   FileText,
   List,
   UserCheck,
-  PlusCircle,
 } from "lucide-react";
 
 export default function Sidebar() {
-  const location = useLocation();
-  const isProductsPath = location.pathname.startsWith("/products");
-
   return (
     <aside className="fixed top-0 left-0 h-screen w-64 bg-white dark:bg-gray-800 shadow-md p-5 overflow-y-auto">
       {/* Logo and Name */}
@@ -42,44 +38,16 @@ export default function Sidebar() {
           <LayoutDashboard size={20} /> Dashboard
         </NavLink>
 
-        {/* Products with Submenu */}
-        <div className="space-y-1">
-          <NavLink
-            to="/products"
-            className={({ isActive }) =>
-              `flex items-center gap-3 hover:text-green-600 ${
-                isProductsPath ? "text-green-600 font-semibold" : ""
-              }`
-            }
-          >
-            <Box size={20} /> Products
-          </NavLink>
-          {isProductsPath && (
-            <div className="ml-6 text-sm space-y-1">
-              <NavLink
-                to="/products"
-                end
-                className={({ isActive }) =>
-                  `block hover:text-green-600 ${
-                    isActive ? "text-green-600 font-medium" : ""
-                  }`
-                }
-              >
-                Product List
-              </NavLink>
-              <NavLink
-                to="/products/add"
-                className={({ isActive }) =>
-                  `block hover:text-green-600 ${
-                    isActive ? "text-green-600 font-medium" : ""
-                  }`
-                }
-              >
-                Add Product
-              </NavLink>
-            </div>
-          )}
-        </div>
+        <NavLink
+          to="/products"
+          className={({ isActive }) =>
+            `flex items-center gap-3 hover:text-green-600 ${
+              isActive ? "text-green-600 font-semibold" : ""
+            }`
+          }
+        >
+          <Box size={20} /> Products
+        </NavLink>
 
         <NavLink
           to="/orders"
