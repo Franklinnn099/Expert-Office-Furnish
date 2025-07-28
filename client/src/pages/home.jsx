@@ -27,7 +27,9 @@ export default function Homepage() {
                 <button onClick={() => scrollToSection('products')} className="hover:underline">Products</button>
                 </Link>
                 <button onClick={() => scrollToSection('testimonials')} className="hover:underline">Testimonials</button>
-                <button onClick={() => scrollToSection('contact')} className="hover:underline">Contact</button>
+                <Link to="/contact">
+                  <button onClick={() => scrollToSection('contact')} className="hover:underline">Contact</button>
+                </Link>
               </nav>
               <div className="flex items-center gap-4 text-white">
                 <Search className="cursor-pointer" />
