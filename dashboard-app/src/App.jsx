@@ -17,7 +17,16 @@ import CustomerDetails from "./pages/CustomerDetails";
 import Categories from "./pages/Categories";
 import Reviews from "./pages/Reviews";
 import Blogposts from "./pages/Blogposts";
+
+// User Management
 import Users from "./pages/Users";
+import AddUser from "./pages/AddUser";
+import EditUser from "./pages/EditUser";
+
+// Admin Roles
+import AdminRoles from "./pages/AdminRoles";
+import AddRole from "./pages/AddRole";                   // ✅ NEW
+import EditAdminRole from "./pages/EditAdminRole";       // ✅ NEW
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -57,7 +66,16 @@ export default function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/blogposts" element={<Blogposts />} />
+
+          {/* User Management */}
           <Route path="/users" element={<Users />} />
+          <Route path="/add-user" element={<AddUser />} />
+          <Route path="/edit-user/:id" element={<EditUser />} />
+
+          {/* Admin Roles */}
+          <Route path="/admin-roles" element={<AdminRoles />} />
+          <Route path="/add-role" element={<AddRole />} />                     {/* ✅ Add Role Route */}
+          <Route path="/edit-role/:id" element={<EditAdminRole />} />         {/* ✅ Edit Role Route */}
         </Routes>
       </AdminLayout>
     </div>
