@@ -24,7 +24,7 @@ import AddUser from "./pages/AddUser";
 import EditUser from "./pages/EditUser";
 
 // Admin Roles
-import AdminRoles from "./pages/AdminRoles";
+import AdminRoles from "./pages/Adminroles";
 import AddRole from "./pages/AddRole";                   // ✅ NEW
 import EditAdminRole from "./pages/EditAdminRole";       // ✅ NEW
 
