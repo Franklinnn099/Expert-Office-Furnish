@@ -3,26 +3,13 @@ import { Link } from 'react-router-dom';
 import { FaUserCircle, FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { ChevronDown } from 'lucide-react';
 import Footer from '../components/footer';
+import Header from "../components/header";
 
 export default function ContactPage() {
   return (
     <div className="bg-gray-100 text-gray-900 min-h-screen font-sans">
       {/* Header */}
-      <header className="bg-white border-b shadow-sm py-4 px-6 flex justify-between items-center">
-        <h1 className="font-bold text-lg">Expert Office Furnish</h1>
-        <nav className="space-x-6 text-sm">
-          <a href="#" className="hover:underline">Products</a>
-          <a href="#" className="hover:underline">Design Services</a>
-          <a href="#" className="hover:underline">About Us</a>
-          <a href="#" className="hover:underline">Contact Us</a>
-          <button className="bg-green-800 text-white px-4 py-1 rounded-full text-sm">Login</button>
-          <button className="ml-2">
-            <svg className="w-4 h-4 inline-block" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M12.9 14.32a8 8 0 111.41-1.41l4.29 4.3-1.42 1.4-4.28-4.29zM8 14a6 6 0 100-12 6 6 0 000 12z" />
-            </svg>
-          </button>
-        </nav>
-      </header>
+      <Header />
 
       {/* Contact Section */}
       <main className="max-w-4xl mx-auto px-4 py-10">

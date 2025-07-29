@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { FaUserCircle, FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { ChevronDown } from 'lucide-react';
 import Footer from '../components/footer';
+import Header from "../components/header";
+
 
 
 const categories = [
@@ -77,20 +79,7 @@ const ShopPage = () => {
   return (
     <div className="bg-[#E4E7EB] min-h-screen text-gray-900">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-3 border-b text-sm">
-        <h1 className="font-semibold">Expert Office Furnish</h1>
-        <nav className="hidden md:flex gap-6">
-          <Link to="/">Home</Link>
-          <Link to="/products">Products</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/contact">Contact</Link>
-        </nav>
-        <div className="flex gap-4 items-center">
-          <FaSearch />
-          <FaShoppingCart />
-          <FaUserCircle className="text-lg" />
-        </div>
-      </header>
+        <Header />
 
       {/* Main Content */}
       <div className="flex flex-col lg:flex-row px-4 md:px-6 py-8 gap-6">

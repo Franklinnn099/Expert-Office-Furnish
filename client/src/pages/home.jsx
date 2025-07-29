@@ -27,23 +27,26 @@ export default function Homepage() {
                 <button onClick={() => scrollToSection('products')} className="hover:underline">Products</button>
                 </Link>
                 <button onClick={() => scrollToSection('testimonials')} className="hover:underline">Testimonials</button>
-                <Link to="/contact">
-                  <button onClick={() => scrollToSection('contact')} className="hover:underline">Contact</button>
-                </Link>
+                
+                  <button onClick={() => scrollToSection('ourservices')} className="hover:underline">Our Services</button>
+                
               </nav>
               <div className="flex items-center gap-4 text-white">
                 <Search className="cursor-pointer" />
                 <User className="cursor-pointer" />
                 <ShoppingCart className="cursor-pointer" />
-                <button onClick={() => scrollToSection('contact')} className="bg-white text-green-800 px-3 py-1 rounded-lg text-sm font-semibold hover:bg-green-200">Contact</button>
+                <Link to={"/contact"}>
+                  <button onClick={() => scrollToSection('contact')} className="bg-white text-green-800 px-3 py-1 rounded-lg text-sm font-semibold hover:bg-green-200">Contact</button>
+                </Link>
               </div>
             </div>
           </header>
           <div id="home" className="flex-grow flex flex-col justify-center items-start text-left px-4 sm:px-16 py-12">
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">Elevate Your Workspace</h1>
             <p className="text-lg max-w-2xl mb-6">Discover premium office furniture designed with purpose. Solutions tailored for your health and productivity.</p>
-            <button className="bg-green-700 text-white px-6 py-3 rounded-full hover:bg-green-800">Shop Now
-            </button>
+             <Link to="/shop">
+             <button className="bg-green-700 text-white px-6 py-3 rounded-full hover:bg-green-800">Shop Now</button>
+            </Link>
           </div>
 
         </div>
@@ -123,12 +126,14 @@ export default function Homepage() {
             placeholder="Enter your email"
             className="flex-grow bg-transparent px-4 py-2 text-sm focus:outline-none"
           />
+          <Link to="/signup">
           <button
             type="submit"
             className="bg-green-300 hover:bg-green-400 text-black text-sm font-semibold px-4 py-2 rounded-full transition-colors"
           >
             Subscribe
           </button>
+            </Link>
         </div>
       </form>
     </section>
