@@ -39,46 +39,45 @@ export default function Products() {
         Products
       </h1>
 
-      <div className="space-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {products.map((product) => (
           <div
             key={product.id}
-            className="flex items-center gap-6 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+            className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-center"
           >
-            {/* Image with hover zoom */}
-            <div className="relative w-40 h-40 overflow-hidden rounded-xl">
+            {/* Enlarged Image */}
+            <div className="w-full h-[220px] overflow-hidden rounded-xl mb-4">
               <img
                 src={product.image}
                 alt={product.alt}
-                className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
               />
             </div>
 
-            {/* Text & Button */}
-            <div className="flex-1">
-              <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-                {product.title}
-              </h2>
-              <p className="text-gray-500 dark:text-gray-300 mb-4 text-sm">
-                {product.description}
-              </p>
+            {/* Title and Description */}
+            <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+              {product.title}
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              {product.description}
+            </p>
 
-              {product.title === "Edit Product" ? (
-                <button
-                  onClick={() => navigate(product.link)}
-                  className="px-6 py-2 bg-gradient-to-r from-green-600 to-green-800 text-white rounded-lg shadow hover:opacity-90 transition"
-                >
-                  {product.button}
-                </button>
-              ) : (
-                <Link
-                  to={product.link}
-                  className="px-6 py-2 bg-gradient-to-r from-green-600 to-green-800 text-white rounded-lg shadow hover:opacity-90 transition"
-                >
-                  {product.button}
-                </Link>
-              )}
-            </div>
+            {/* Subtle Button Under Image */}
+            {product.title === "Edit Product" ? (
+              <button
+                onClick={() => navigate(product.link)}
+                className="text-green-700 dark:text-green-400 text-sm hover:underline bg-transparent shadow-none"
+              >
+                {product.button}
+              </button>
+            ) : (
+              <Link
+                to={product.link}
+                className="text-green-700 dark:text-green-400 text-sm hover:underline bg-transparent shadow-none"
+              >
+                {product.button}
+              </Link>
+            )}
           </div>
         ))}
       </div>

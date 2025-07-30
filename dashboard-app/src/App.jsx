@@ -1,22 +1,40 @@
+// src/App.jsx
+
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Layout
 import AdminLayout from "./layouts/AdminLayout";
 
-// Pages
+// Dashboard
 import Dashboard from "./pages/Dashboard";
+
+// Products
 import Products from "./pages/Products";
 import ProductList from "./pages/ProductList";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
+
+// Orders
 import Orders from "./pages/Orders";
 import OrderDetails from "./pages/OrderDetails";
+
+// Customers
 import Customers from "./pages/Customers";
 import CustomerDetails from "./pages/CustomerDetails";
+
+// Categories & Blog
 import Categories from "./pages/Categories";
-import Reviews from "./pages/Reviews";
 import Blogposts from "./pages/Blogposts";
+
+// Discounts
+import Discounts from "./pages/Discounts";
+
+// Analytics
+import AnalyticsOverview from "./pages/AnalyticsOverview";
+import SalesPerformance from "./pages/SalesPerformance";
+import TopProducts from "./pages/TopProducts";
+import UserBehavior from "./pages/UserBehavior";
 
 // User Management
 import Users from "./pages/Users";
@@ -25,8 +43,8 @@ import EditUser from "./pages/EditUser";
 
 // Admin Roles
 import AdminRoles from "./pages/Adminroles";
-import AddRole from "./pages/AddRole";                   // ✅ NEW
-import EditAdminRole from "./pages/EditAdminRole";       // ✅ NEW
+import AddRole from "./pages/AddRole";
+import EditAdminRole from "./pages/EditAdminRole";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -62,10 +80,18 @@ export default function App() {
           <Route path="/customers" element={<Customers />} />
           <Route path="/customers/:id" element={<CustomerDetails />} />
 
-          {/* Other Pages */}
+          {/* Categories & Blog */}
           <Route path="/categories" element={<Categories />} />
-          <Route path="/reviews" element={<Reviews />} />
           <Route path="/blogposts" element={<Blogposts />} />
+
+          {/* Analytics */}
+          <Route path="/analytics" element={<AnalyticsOverview />} />
+          <Route path="/analytics/sales-performance" element={<SalesPerformance />} />
+          <Route path="/analytics/top-products" element={<TopProducts />} />
+          <Route path="/analytics/user-behavior" element={<UserBehavior />} />
+
+          {/* Discounts */}
+          <Route path="/discounts" element={<Discounts />} />
 
           {/* User Management */}
           <Route path="/users" element={<Users />} />
@@ -74,8 +100,8 @@ export default function App() {
 
           {/* Admin Roles */}
           <Route path="/admin-roles" element={<AdminRoles />} />
-          <Route path="/add-role" element={<AddRole />} />                     {/* ✅ Add Role Route */}
-          <Route path="/edit-role/:id" element={<EditAdminRole />} />         {/* ✅ Edit Role Route */}
+          <Route path="/add-role" element={<AddRole />} />
+          <Route path="/edit-role/:id" element={<EditAdminRole />} />
         </Routes>
       </AdminLayout>
     </div>
