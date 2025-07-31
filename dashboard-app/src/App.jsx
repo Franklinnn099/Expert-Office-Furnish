@@ -29,6 +29,8 @@ import Blogposts from "./pages/Blogposts";
 
 // Discounts
 import Discounts from "./pages/Discounts";
+import CreateDiscount from "./pages/CreateDiscount";
+import EditDiscount from "./pages/EditDiscount";
 
 // Analytics
 import AnalyticsOverview from "./pages/AnalyticsOverview";
@@ -92,6 +94,8 @@ export default function App() {
 
           {/* Discounts */}
           <Route path="/discounts" element={<Discounts />} />
+          <Route path="/discounts/create" element={<CreateDiscount />} />
+          <Route path="/discounts/edit/:id" element={<EditDiscount />} />
 
           {/* User Management */}
           <Route path="/users" element={<Users />} />
