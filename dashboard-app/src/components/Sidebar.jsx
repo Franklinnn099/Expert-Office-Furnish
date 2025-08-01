@@ -73,12 +73,12 @@ export default function Sidebar() {
           <List size={20} /> Categories
         </NavLink>
 
-        <NavLink to="/blogposts" className={({ isActive }) =>
+        <NavLink to="/content" className={({ isActive }) =>
           `flex items-center gap-3 hover:text-green-600 ${
             isActive ? "text-green-600 font-semibold" : ""
           }`
         }>
-          <FileText size={20} /> Blog Posts
+          <FileText size={20} /> Content Management
         </NavLink>
 
         <NavLink to="/customers" className={({ isActive }) =>

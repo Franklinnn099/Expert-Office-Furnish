@@ -1,5 +1,4 @@
 // src/App.jsx
-
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -23,9 +22,13 @@ import OrderDetails from "./pages/OrderDetails";
 import Customers from "./pages/Customers";
 import CustomerDetails from "./pages/CustomerDetails";
 
-// Categories & Blog
+// Categories & Content
 import Categories from "./pages/Categories";
-import Blogposts from "./pages/Blogposts";
+import ContentManagement from "./pages/ContentManagement";
+import BlogPostList from "./pages/BlogPostList";
+import CreateBlogPost from "./pages/CreateBlogpost";
+import EditBlogPost from "./pages/EditBlogPost"; // ✅ Added
+import HomePageBanners from "./pages/HomepageBanners";
 
 // Discounts
 import Discounts from "./pages/Discounts";
@@ -82,9 +85,13 @@ export default function App() {
           <Route path="/customers" element={<Customers />} />
           <Route path="/customers/:id" element={<CustomerDetails />} />
 
-          {/* Categories & Blog */}
+          {/* Categories & Content */}
           <Route path="/categories" element={<Categories />} />
-          <Route path="/blogposts" element={<Blogposts />} />
+          <Route path="/content" element={<ContentManagement />} />
+          <Route path="/content/blogs" element={<BlogPostList />} />
+          <Route path="/content/blogs/create" element={<CreateBlogPost />} />
+          <Route path="/content/blogs/edit/:id" element={<EditBlogPost />} /> {/* ✅ Added */}
+          <Route path="/content/banners" element={<HomePageBanners />} />
 
           {/* Analytics */}
           <Route path="/analytics" element={<AnalyticsOverview />} />
